@@ -1,0 +1,21 @@
+{% extends "navbar.html" %}
+{% block body %}
+<h2>Update Appointment Info</h2>
+
+<form method="post">
+    {% csrf_token %}
+    <label>Doctor Name:</label>
+    <input type="text" name="dname" value="{{ apt.dname }}"><br>
+
+    <label>Patient Mobile:</label>
+    <input type="text" name="pname" value="{{ apt.pname }}"><br>
+
+    <label>Date:</label>
+    <input type="text" name="date" value="{{ apt.date }}"><br>
+
+    <label>Time:</label>
+    <input type="text" name="time" value="{{ apt.time }}"><br>
+
+    <button type="submit">Update</button>
+</form>
+{% endblock %}

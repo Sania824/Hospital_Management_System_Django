@@ -1,0 +1,18 @@
+{% extends "navbar.html" %}
+{% load static %}
+{% block body%}
+
+<div class="container" style="margin-top: 50px">
+    <h2 class="text-center">Appointment Management</h2>
+    <div>
+        <ul>
+            <li>
+                <a href="{% url 'add_apt' %}" class="btn btn-info" style="margin-bottom:10px">Add Appointment</a>
+            <li>
+                <a href="{% url 'view_apt' %}" class="btn btn-info" style = margin-bottom:10px>View Appointment</a>
+            </li>
+            </li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

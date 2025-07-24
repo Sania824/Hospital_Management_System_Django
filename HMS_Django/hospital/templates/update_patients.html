@@ -1,0 +1,22 @@
+{% extends "navbar.html" %}
+{% block body %}
+<h2>Update Patient Info</h2>
+
+<form method="post">
+    {% csrf_token %}
+    <label>Name:</label>
+    <input type="text" name="name" value="{{ patient.name }}"><br>
+
+    <label>Gender:</label>
+    <input type="text" name="gender" value="{{ patient.gender }}"><br>
+
+    <label>Mobile:</label>
+    <input type="text" name="mobile" value="{{ patient.mobile }}"><br>
+
+    <label>Address:</label>
+    <input type="text" name="address" value="{{ patient.address }}"><br>
+
+    <button type="submit">Update</button>
+</form>
+{% endblock %}
+

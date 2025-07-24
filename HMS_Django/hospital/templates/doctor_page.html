@@ -1,0 +1,18 @@
+{% extends "navbar.html" %}
+{% load static %}
+{% block body%}
+
+<div class="container" style="margin-top: 50px">
+    <h2 class="text-center">Doctor Management</h2>
+    <div>
+        <ul>
+            <li>
+                <a href="{% url 'add_doctor' %}" class="btn btn-info" style="margin-bottom:10px">Add Doctor</a>
+            <li>
+                <a href="{% url 'view_doctor' %}" class="btn btn-info" style = margin-bottom:10px>View Doctor</a>
+            </li>
+            </li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

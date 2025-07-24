@@ -1,0 +1,16 @@
+.nav-link{
+color:  #08153d;
+text-align: center;
+}
+.nav-link:hover{
+color: yellow !important;
+background-color:#800080;
+border-radius: 10px;
+}
+.navbar-nav{
+text-align: right;
+}
+.navbar-brand:hover{
+color: yellow !important;
+font-weight:bold;
+}

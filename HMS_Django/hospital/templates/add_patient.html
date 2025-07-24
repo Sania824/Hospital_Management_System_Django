@@ -1,0 +1,32 @@
+{% extends "navbar.html" %}
+{% load static %}
+{% block body %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Patient Page</title>
+</head>
+<body>
+    <div class="container">
+    <h2 class="text-center">Add Patient</h2>
+    <form method = "post">
+        {% csrf_token %}
+        <label>Patient Name</label>
+        <input type="text" class="form-control" name="name">
+        <label>Gender</label>
+        <input type="text" class="form-control" name="gender">
+        <label>Mobile</label>
+        <input type="text" class="form-control" name="mobile">
+        <label>Address</label>
+        <input type="text" class="form-control" name="address">
+        <br>
+        <input type="submit" value="Add Patient" class="form-control btn btn-primary">
+    </form>
+</div>
+</body>
+</html>
+{% endblock %}

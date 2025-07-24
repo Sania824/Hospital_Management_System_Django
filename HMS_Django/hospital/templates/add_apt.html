@@ -1,0 +1,29 @@
+{% extends "navbar.html" %}
+{% load static %}
+{% block body %}
+<div class="container">
+    <h2 class="text-center">Add Appointment</h2>
+
+    {% if error %}
+        <div style="color: red;">{{ error }}</div>
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+        <label>Doctor Name</label>
+        <input type="text" class="form-control" name="dname">
+
+        <label>Patient Name</label>
+        <input type="text" class="form-control" name="pname">
+
+        <label>Appointment Date</label>
+        <input type="date" class="form-control" name="date">
+
+        <label>Appointment Time</label>
+        <input type="time" class="form-control" name="time">
+
+        <br>
+        <input type="submit" value="Add Appointment" class="form-control btn btn-primary">
+    </form>
+</div>
+{% endblock %}
