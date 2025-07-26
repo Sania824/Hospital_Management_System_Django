@@ -217,23 +217,48 @@ def add_apt(request):
     return render(request, 'add_apt.html', {'error': error})
 
 
-
 def view_apt(request):
-    all_data = Doctor.objects.all()
-    return render(request, 'view_apt.html', {'all_data':all_data})
+    all_data = Appointment.objects.all()
+    return render(request, 'view_apt.html', {'data':all_data})
 
 def del_apt(request, apt_id):
-    apt = get_object_or_404(Appointment, apt_id = apt_id)
+    apt = get_object_or_404(Appointment, id = apt_id)
     apt.delete()
     print("Appointment Deleted Successfully")
     return redirect('view_apt')
 
+# def update_apt(request, apt_id):
+#     apt = get_object_or_404(Appointment, id = apt_id)
+#     if request.method == 'POST':
+#         apt.dname = request.POST.get('dname')
+#         apt.pname = request.POST.get('pname')
+#         apt.date = request.POST.get('date')
+#         apt.time = request.POST.get('time')
+#         apt.save()
+#         return redirect('view_apt')
+#     return render(request, 'update_apt.html', {'apt': apt})
+
 def update_apt(request, apt_id):
-    apt = get_object_or_404(Appointment, apt_id=apt_id)
+    apt = get_object_or_404(Appointment, id=apt_id)
+
     if request.method == 'POST':
-        apt.name = request.POST.get('name')
-        apt.mobile = request.POST.get('mobile')
-        apt.specialization = request.POST.get('specialization')
+        # Get doctor/patient by ID from form
+        doctor_id = request.POST.get('doctor')
+        patient_id = request.POST.get('patient')
+
+        # Update relationship fields using IDs
+        apt.doctor = Doctor.objects.get(id=doctor_id)
+        apt.patient = Patient.objects.get(id=patient_id)
+
+        # Update date/time
+        apt.date = request.POST.get('date')
+        apt.time = request.POST.get('time')
+
         apt.save()
-    return redirect('view_apt')
-    return render(request, 'update_apt.html', {'apt': apt})
+        return redirect('view_apt')
+
+    return render(request, 'update_apt.html', {
+        'apt': apt,
+        'doctors': Doctor.objects.all(),
+        'patients': Patient.objects.all()
+    })

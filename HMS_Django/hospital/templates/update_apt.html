@@ -4,17 +4,37 @@
 
 <form method="post">
     {% csrf_token %}
-    <label>Doctor Name:</label>
-    <input type="text" name="dname" value="{{ apt.dname }}"><br>
+<!--    <label>Doctor Name:</label>-->
+<!--    <input type="text" name="dname" value="{{ apt.dname }}"><br>-->
 
-    <label>Patient Mobile:</label>
-    <input type="text" name="pname" value="{{ apt.pname }}"><br>
+<!--    <label>Patient Mobile:</label>-->
+<!--    <input type="text" name="pname" value="{{ apt.pname }}"><br>-->
+
+    <label>Doctor:</label>
+    <select name="doctor">
+    {% for doc in doctors %}
+    <option value="{{ doc.id }}"
+            {% if doc.id == apt.doctor.id %}selected{% endif %}>
+        {{ doc.name }}
+    </option>
+    {% endfor %}
+</select>
+
+      <label>Patient:</label>
+<select name="patient">
+    {% for pat in patients %}
+    <option value="{{ pat.id }}"
+            {% if pat.id == apt.patient.id %}selected{% endif %}>
+        {{ pat.name }}
+    </option>
+    {% endfor %}
+</select>
 
     <label>Date:</label>
-    <input type="text" name="date" value="{{ apt.date }}"><br>
+    <input type="date" name="date" value="{{ apt.date }}"><br>
 
     <label>Time:</label>
-    <input type="text" name="time" value="{{ apt.time }}"><br>
+    <input type="time" name="time" value="{{ apt.time }}"><br>
 
     <button type="submit">Update</button>
 </form>
