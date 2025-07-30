@@ -1,0 +1,117 @@
+[
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$zJJCgp9jwxviRI8mBF2o7J$0U1kyDWmxmVRkLEBY/ikXkAZ8qXprob8PmiUIbk4LnM=",
+    "last_login": "2025-07-26T14:01:11.828Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-07-23T08:16:05.269Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "6hlkkufzkzhmjlw4c3b8i00a70eig2to",
+  "fields": {
+    "session_data": "e30:1uerHn:JDSWN5W2i3SBJscAW3VxLgIRyT-dh1tPi_un5eDE_5g",
+    "expire_date": "2025-08-07T08:26:43.058Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "c7u5zynh0ngbiww8jlv7c774n85pzwry",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSE8ChSX7v0GMjNMpWogKe3K-O_apAvd3nPOfYkE21rS1nlJcxZnocXpd0OgB9cd5DvUW5PU6rrMKHdFHrTLa8v8vBzu30GBXr41WoyQrTOYUQX2yKSUcUqbQRENGBidAzIjILDxMWo7kpuiCn6KGkC8P_iSOEU:1ueqhi:yAupn5lcxtrUI09WCLpX9A5NIMaU-99pv_MW43H_0ck",
+    "expire_date": "2025-08-07T07:49:26.520Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "fl1tedyd1rt59fc5ojkkct2mscv3qeg1",
+  "fields": {
+    "session_data": "e30:1uerMc:RokFSO4T_SGRbUrt5cSvZnQF8HdcUy43t8cgHpEGpWg",
+    "expire_date": "2025-08-07T08:31:42.124Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "hex59nt7ifvograrnuzh9xbmxpqjp8fi",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSE8ChSX7v0GMjNMpWogKe3K-O_apAvd3nPOfYkE21rS1nlJcxZnocXpd0OgB9cd5DvUW5PU6rrMKHdFHrTLa8v8vBzu30GBXr41WoyQrTOYUQX2yKSUcUqbQRENGBidAzIjILDxMWo7kpuiCn6KGkC8P_iSOEU:1uffSZ:CRbz8dWQJfdsxVOkL1xqKmHRby_yj-cDTkMUHORpOuc",
+    "expire_date": "2025-08-09T14:01:11.836Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "ju55lbmu7lggyxhweeh9a4cdta864z7a",
+  "fields": {
+    "session_data": "e30:1uerEM:YSTxJWIzQZ-2Tz8bbNG5IVtaVfAWG1h1OGHUQ8yA5A0",
+    "expire_date": "2025-08-07T08:23:10.715Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "o0owport7vmppwbday2s4weufno8hyxa",
+  "fields": {
+    "session_data": "e30:1uerFW:jZ5C3NL2YsjtZ5GUjJF-KU4o_lC5tFvQLEZ98IJN910",
+    "expire_date": "2025-08-07T08:24:22.283Z"
+  }
+},
+{
+  "model": "hospital.doctor",
+  "pk": 2,
+  "fields": {
+    "name": "Sania Aimen",
+    "mobile": 3316804322,
+    "specialization": "Heart Surgoenn"
+  }
+},
+{
+  "model": "hospital.patient",
+  "pk": 6,
+  "fields": {
+    "name": "Sania Aimen",
+    "gender": "female",
+    "mobile": 432323,
+    "address": "Askari 11"
+  }
+},
+{
+  "model": "hospital.patient",
+  "pk": 8,
+  "fields": {
+    "name": "Mongo DB",
+    "gender": "female",
+    "mobile": 432323,
+    "address": "Askari 1"
+  }
+},
+{
+  "model": "hospital.appointment",
+  "pk": 3,
+  "fields": {
+    "doctor": 2,
+    "patient": 6,
+    "date": "2025-07-27",
+    "time": "00:29:00"
+  }
+},
+{
+  "model": "hospital.appointment",
+  "pk": 5,
+  "fields": {
+    "doctor": 2,
+    "patient": 6,
+    "date": "2025-07-26",
+    "time": "01:20:00"
+  }
+}
+]

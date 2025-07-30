@@ -5,7 +5,7 @@ from django.db.models import CASCADE
 # Create your models here.
 class Doctor(models.Model):
     name = models.CharField(max_length=50)
-    mobile = models.IntegerField()
+    mobile = models.CharField(max_length=15)
     specialization = models.CharField(max_length=50)
 
     def __str__(self):
@@ -14,7 +14,7 @@ class Doctor(models.Model):
 class Patient(models.Model):
     name = models.CharField(max_length=50)
     gender = models.CharField(max_length=10)
-    mobile = models.IntegerField(null=True)
+    mobile = models.CharField(max_length=15)
     address = models.CharField(max_length=200)
 
     def __str__(self):

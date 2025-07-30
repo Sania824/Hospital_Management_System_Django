@@ -9,7 +9,8 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
-
+import pymysql
+pymysql.install_as_MySQLdb()
 import os
 from pathlib import Path
 
@@ -78,8 +79,12 @@ WSGI_APPLICATION = 'HMS_Django.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'HMS_db',
+        'USER': 'sania',
+        'PASSWORD': 'San1a@HMS',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
@@ -127,4 +132,3 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'hospital', 'static')]
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = "/"
-LOGOUT_REDIRECT_URL = "/"

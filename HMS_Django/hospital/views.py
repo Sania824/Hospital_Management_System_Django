@@ -23,7 +23,7 @@ def index(request):
         return render(request, 'index.html')
 
 def login_view(request):
-    error = ""
+    # error = ""
     if request.method == 'POST':
         u = request.POST['uname']
         p = request.POST['pwd']
@@ -31,9 +31,9 @@ def login_view(request):
         if user is not None and user.is_staff:
             login(request, user)
             return redirect('index')
-        else:
-            error = "yes"
-    return render(request, 'login.html', {error: 'error'})
+        # else:
+        #     error = "Invalid Credentials"
+    return render(request, 'login.html', {'error': 'Invalid Credentials'})
 
 def logout_view(request):
    if request.user.is_authenticated:
@@ -64,6 +64,9 @@ def add_patient(request):
         print("Received data:", name, gender, mobile, address)
 
         if name and gender and mobile and address:
+            if not mobile.isdigit():
+                error = "Mobile number must contain only digits."
+                return render(request, 'add_patient.html', {'error': error})
             try:
                 Patient.objects.create(
                     name = name,
