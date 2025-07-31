@@ -1,13 +1,13 @@
 Hospital Management System
 
-This project is built in the Django framework.
+This project is built using the Django framework.
 The key features of this system includes patients, doctors and appointment management. 
 
 Features:
 1. Authentication - It has an authentication system for the admins to securely login and logout.
-2. Patient Management - create, view, update, delete
-3. Doctor Management - create, view, update, delete
-4. Appointment Management - create, view, update, delete
+2. Patient Management - Create, view, update, and delete operations
+3. Doctor Management -  Create, view, update, and delete operations
+4. Appointment Management -  Create, view, update, and delete operations
 
 Concepts Used:
 1. Writing views
